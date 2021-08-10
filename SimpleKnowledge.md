@@ -217,4 +217,4 @@ Glide 的into方法必须在主线程调用 否则会抛异常 new IllegalArgume
                 0.0f,
                 false
         );
-        int width = staticLayout.getLineWidth(0)
+int width = staticLayout.getLineWidth(0)
