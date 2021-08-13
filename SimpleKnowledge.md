@@ -218,3 +218,23 @@ Glide 的into方法必须在主线程调用 否则会抛异常 new IllegalArgume
                 false
         );
 int width = staticLayout.getLineWidth(0)
+
+
+✰✰✰✰✰ view的background的图如何不铺满整个View
+✰✰✰✰✰ 设置有margin的backgroundDrawable
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="#ffffff" />
+        </shape>
+    </item>
+    <item
+        android:bottom="xdp"
+        android:top="xdp">
+        <shape android:shape="rectangle">
+            <solid android:color="#ffffff" />
+            <corners android:radius="xdp" />
+        </shape>
+    </item>
+</layer-list>
