@@ -249,3 +249,8 @@ int width = staticLayout.getLineWidth(0)
     canvas.drawBitmap(holeBitmap, 0f, 0f, paint)
     mPaint.xfermode = null
     canvas.restoreToCount(saveLayerId)
+    
+    
+✰✰✰✰✰invalidate 没有调用 onDraw方法
+1.将逻辑移动到 dispatchDraw
+2.setWillNotDraw(false)
