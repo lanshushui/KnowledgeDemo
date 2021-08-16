@@ -238,3 +238,14 @@ int width = staticLayout.getLineWidth(0)
         </shape>
     </item>
 </layer-list>
+
+✰✰✰✰✰ 绘制带有空洞的Bitmap
+    paint.isFilterBitmap = false
+    val saveLayerId = canvas.saveLayer(0f, 0f, screenWidth, screenHeight,paint)
+    val maskBitmap = Bitmap.createBitmap(screenWidth, screenHeight, Bitmap.Config.ALPHA_8)
+    canvas.drawBitmap(maskBitmap, 0f, 0f, paint)
+    mPaint.xfermode = PorterDuffXfermode(PorterDuff.Mode.DST_OUT)
+    val holeBitmap = Bitmap.createBitmap(screenWidth, screenHeight, Bitmap.Config.ALPHA_8)
+    canvas.drawBitmap(holeBitmap, 0f, 0f, paint)
+    mPaint.xfermode = null
+    canvas.restoreToCount(saveLayerId)
