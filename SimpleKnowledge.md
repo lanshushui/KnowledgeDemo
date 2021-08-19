@@ -254,3 +254,15 @@ int width = staticLayout.getLineWidth(0)
 ✰✰✰✰✰invalidate 没有调用 onDraw方法
 1.将逻辑移动到 dispatchDraw
 2.setWillNotDraw(false)
+
+
+✰✰✰✰✰ 获得某个高度中 文字的BaseLine的Y坐标  @see raw/getFontMetrics.webp
+    private fun getDrawTextBaseY(lineHeight: Float, paint: Paint): Float {
+        val fontMetrics = paint.getFontMetrics()
+        val distance = (fontMetrics.bottom - fontMetrics.top) / 2 - fontMetrics.bottom
+        val baseline = lineHeight / 2 + distance
+        return baseline
+    }
+    
+✰✰✰✰✰ canvas 画文字 居中效果
+canvas.drawText(str, x, getDrawTextBaseY(30dp, paint),paint)
