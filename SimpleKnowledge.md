@@ -266,3 +266,13 @@ int width = staticLayout.getLineWidth(0)
     
 ✰✰✰✰✰ canvas 画文字 居中效果
 canvas.drawText(str, x, getDrawTextBaseY(30dp, paint),paint)
+
+
+✰✰✰✰✰ canvas.drawArc 画圆弧
+drawArc(RectF oval, float startAngle, float sweepAngle, boolean useCenter,Paint paint)
+
+oval：为确定圆弧区域的矩形，圆弧的中心点为矩形的中心点
+startAngle：为圆弧的开始角度（时钟3点的方向为0度，顺时钟方向为正）
+sweepAngle：为圆弧的扫过角度（正数为顺时钟方向，负数为逆时钟方向）
+useCenter：表示绘制的圆弧是否与中心点连接成闭合区域
+paint：paint为绘制圆弧的画笔
