@@ -276,3 +276,13 @@ startAngle：为圆弧的开始角度（时钟3点的方向为0度，顺时钟�
 sweepAngle：为圆弧的扫过角度（正数为顺时钟方向，负数为逆时钟方向）
 useCenter：表示绘制的圆弧是否与中心点连接成闭合区域
 paint：paint为绘制圆弧的画笔
+
+
+✰✰✰✰✰ LinearGradient构造参数 LinearGradient(float x0, float y0, float x1, float y1......)
+✰✰✰✰✰ 参数坐标都是对应画布的坐标 所以正确使用方式如下
+canvas?.drawRoundRect(
+    RectF(curX, curY, curX+width, curY+height), height / 2, height / 2, Paint().apply {
+        isAntiAlias = true
+        style = Paint.Style.FILL
+        shader = LinearGradient(curX, 0f, curX+width, 0f, frameBgGradientColorArr, null, Shader.TileMode.CLAMP)
+})
