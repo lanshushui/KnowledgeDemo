@@ -121,6 +121,14 @@ https://www.cnblogs.com/xmmc/p/10827495.html
 5.电脑快速截图手机屏幕
  adb exec-out screencap -p > C:\Users\YY\Desktop\1.png
 
+6.Android stuido 报错处理方式
+java.lang.RuntimeException: Invocation failed Unexpected end of file from server
+at org.jetbrains.git4idea.GitAppUtil.sendXmlRequest(GitAppUtil.java:30)
+at org.jetbrains.git4idea.http.GitAskPassApp.main(GitAskPassApp.java:58)
+Caused by: java.net.SocketException: Unexpected end of file from server
+
+--> File - Settings - Git - use credential helper
+
   
 
                                                          
