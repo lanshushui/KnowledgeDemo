@@ -30,3 +30,33 @@ val colors =
 val drawable = GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, colors)
 drawable.gradientType = GradientDrawable.LINEAR_GRADIENT
 view?.background = drawable
+
+
+
+//callback转为协程
+suspend fun getUserCoroutine() = suspendCancellableCoroutine<User> { continuation ->
+    val call = OkHttpClient().newCall(...)
+
+    continuation.invokeOnCancellation { // ①
+        log("invokeOnCancellation: cancel the request.")
+        call.cancel()
+    }
+
+    call.enqueue(object : okhttp3.Callback {
+        override fun onFailure(call: Call, e: IOException) {
+            log("onFailure: $e")
+            continuation.resumeWithException(e)
+        }
+
+        override fun onResponse(call: Call, response: Response) {
+            log("onResponse: ${response.code()}")
+            response.body()?.let {
+                try {
+                    continuation.resume(User.from(it.string()))
+                } catch (e: Exception) {
+                    continuation.resumeWithException(e)
+                }
+            } ?: continuation.resumeWithException(NullPointerException("ResponseBody is null."))
+        }
+    })
+}
