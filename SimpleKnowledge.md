@@ -287,3 +287,7 @@ canvas?.drawRoundRect(
         shader = LinearGradient(curX, 0f, curX+width, 0f, frameBgGradientColorArr, null, Shader.TileMode.CLAMP)
 })
 ✰✰✰✰✰ 如果画从左到右的渐变 不用在意y0,y1的值 直接设置为0就可以了 设置为0和设置为10000效果是一样的
+
+
+✰✰✰✰✰  ConstraintLayout marginLeft 不支持负数 --> 使用 translationX 属性
+
