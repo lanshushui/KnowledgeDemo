@@ -291,3 +291,5 @@ canvas?.drawRoundRect(
 
 ✰✰✰✰✰  ConstraintLayout marginLeft 不支持负数 --> 使用 translationX 属性
 
+✰✰✰✰✰  倒计时控件 使用固定尺寸 避免频繁触发requestLayout
+
