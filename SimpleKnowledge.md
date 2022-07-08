@@ -293,3 +293,7 @@ canvas?.drawRoundRect(
 
 ✰✰✰✰✰  倒计时控件 使用固定尺寸 避免频繁触发requestLayout
 
+✰✰✰✰✰
+getX()与getY()方法获取的是View左上角相对于父容器的坐标，当View没有发生平移操作时，getX()==getLeft()、getY==getTop()。
+translationX与 translationY是View左上角相对于父容器的偏移量：translationX = getX() - getLeft(),当View未发生平移操作时，translationX 与translationY都为0
+
