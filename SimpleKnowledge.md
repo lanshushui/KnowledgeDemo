@@ -277,6 +277,13 @@ sweepAngle：为圆弧的扫过角度（正数为顺时钟方向，负数为逆�
 useCenter：表示绘制的圆弧是否与中心点连接成闭合区域
 paint：paint为绘制圆弧的画笔
 
+✰✰✰✰✰ 圆弧渐变
+SweepGradient(float cx, float cy, @NonNull @ColorInt int[] colors, @Nullable float[] positions)
+默认0度是时钟3点的方向,若想从时钟0点开始绘画,方法:
+val matrix = Matrix()
+matrix.setRotate(-90f, width / 2f, height / 2f)
+SweepGradient.setLocalMatrix(matrix);
+
 
 ✰✰✰✰✰ LinearGradient构造参数 LinearGradient(float x0, float y0, float x1, float y1......)
 ✰✰✰✰✰ 参数坐标都是对应画布的坐标 所以正确使用方式如下
