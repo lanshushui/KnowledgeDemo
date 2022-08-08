@@ -129,6 +129,14 @@ Caused by: java.net.SocketException: Unexpected end of file from server
 
 --> File - Settings - Git - use credential helper
 
+7. gradle 的jdk配置问题
+
+1.检查全局gradle配置C:\Users\<user>\.gradle
+
+2.在您的 android 项目中，您将有一个名为gradle.properties
+
+3.删除org.gradle.java.home=C:\\Program Files\\Java\\jdk1.8.0_144
+
   
 
                                                          
