@@ -137,9 +137,13 @@ Caused by: java.net.SocketException: Unexpected end of file from server
 
 3.删除org.gradle.java.home=C:\\Program Files\\Java\\jdk1.8.0_144
 
-  
 
-                                                         
+8. 设计稿尺寸转换
+低密度（ldpi）	240x320	120	1dp=0.75px	
+中密度（mdpi）	320x480	160	1dp=1px	4
+高密度（hdpi）	480x800	240	1dp=1.5px	
+超高密度（xhdpi）	720x1280	320	1dp=2px	
+超超高密度（xxhdpi）	1080x1920	480	1dp=3px	                                                         
 
    
    
