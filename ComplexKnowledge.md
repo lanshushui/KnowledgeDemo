@@ -94,6 +94,26 @@ assembleDebug	                                        空 task，               
 transformClassesAndResourcesWithR8For$variantName        TransformTask          R8 proguard混淆代码                       
 transformClassesAndResourcesWithProguardFor$variantName  TransformTask          proguard混淆代码   
 
+
+processDebugResources aapt任务输出的是_ap文件 本质上是zip包
+包括三部分
+'AndroidManifest.xml'
+'resources.arsc'
+'res/**/*'
+
+groovy写法 解压到某个目录
+FileTree apFiles = project.zipTree(apFile)
+File unzipApDir = new File(apFile.parentFile, 'ap_unzip')
+unzipApDir.delete()
+project.copy {
+    from apFiles
+    into unzipApDir
+    include 'AndroidManifest.xml'
+    include 'resources.arsc'
+    include 'res/**/*'
+}
+
+
 ✰✰✰✰✰
 PorterDuff.Mode图形混合处理
 
