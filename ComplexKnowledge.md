@@ -91,7 +91,8 @@ validateSigningDebug	                                ValidateSigningTask	       
 packageDebug	                                        PackageApplication                打包 apk
 assembleDebug	                                        空 task，                          锚点
 
-
+transformClassesAndResourcesWithR8For$variantName        TransformTask          R8 proguard混淆代码                       
+transformClassesAndResourcesWithProguardFor$variantName  TransformTask          proguard混淆代码   
 
 ✰✰✰✰✰
 PorterDuff.Mode图形混合处理
