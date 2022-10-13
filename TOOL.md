@@ -145,5 +145,11 @@ Caused by: java.net.SocketException: Unexpected end of file from server
 超高密度（xhdpi）	720x1280	320	1dp=2px	
 超超高密度（xxhdpi）	1080x1920	480	1dp=3px	                                                         
 
+9.mapping 恢复代码
+Android\Sdk\tools\proguard\bin\proguardgui.bat 使用retrace功能
+
+10.hprof转换
+在sdk目录 输入以下命令
+hprof-conv android.hprof mat.hprof
    
    
