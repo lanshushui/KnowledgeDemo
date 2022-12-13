@@ -304,3 +304,13 @@ canvas?.drawRoundRect(
 getX()与getY()方法获取的是View左上角相对于父容器的坐标，当View没有发生平移操作时，getX()==getLeft()、getY==getTop()。
 translationX与 translationY是View左上角相对于父容器的偏移量：translationX = getX() - getLeft(),当View未发生平移操作时，translationX 与translationY都为0
 
+
+✰✰✰✰✰  PopupWindow
+setBackgroundDrawable(ColorDrawable(0x00000000))  背景透明
+当设置背景时， mBackgroundView 的宽是 MATCH_PARENT 高是mContentView的高，只能是WRAP_CONTENT或者MATCH_PARENT，
+mContentView的高是具体值时，是MATCH_PARENT
+
+当设置背景时， mContentView 的宽是 强制设成MATCH_PARENT 高只能是WRAP_CONTENT或者MATCH_PARENT，
+mContentView的高是具体值时，强制改为MATCH_PARENT
+
+
