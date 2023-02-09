@@ -164,7 +164,31 @@ PorterDuff.Mode图形混合处理
 
 16.PorterDuff.Mode.SCREEN
 取两图层全部区域，交集部分变为透明色
-                                                         
 
-   
-   
+
+✰✰✰✰✰
+getWindowVisibleDisplayFrame   
+    getWindowVisibleDisplayFrame()方法返回的是窗口的可视区域大小，并非某个View的可视区域大小，所以用窗口中的任意View来执行都是没有差别的
+
+系统状态栏会影响getWindowVisibleDisplayFrame()执行结果outRect中的top属性的值。
+
+如果窗口是全屏的，也就是设置了flags为WindowManager.LayoutParams.FLAG_FULLSCREEN，或者android:windowFullscreen设置为true，
+则outRect中的top属性不受状态栏影响，其值始终为0。否则，outRect中的top属性值将会受到系统状态栏的影响。
+
+如果窗口的LayoutParams的height设置为WindowManager.LayoutParams.MATCH_PARENT，
+则outRect中的top值会等于系统状态栏的高度，
+如果窗口的LayoutParams的height设置为WindowManager.LayoutParams.WRAP_CONTENT或者某个具体的值，
+则outRect中的top值会等于系统状态栏和窗口重叠区域的高度，如果没有重叠，则是0。
+
+上面这几点可以归结为一点，outRect中的top值等于系统状态栏在理论上会对窗口上方所在位置产生的影响。
+
+如果窗口是全屏的，系统状态栏将无法影响窗口上方位置，因此，outRect中的top值始终为0。
+如果窗口的LayoutParams的height设置为WindowManager.LayoutParams.MATCH_PARENT，
+则理论上窗口将到达屏幕最上方的位置，但是由于状态栏的存在，会压迫窗口位置到状态栏下方，因此，outRect中的top值等于系统状态栏的高度。
+如果窗口的LayoutParams的height设置为WindowManager.LayoutParams.WRAP_CONTENT或者某个具体的值，
+且窗口和状态栏存在重叠，则这时状态栏同样会试图压迫窗口位置到状态栏下方，其位移就是重叠区域的高度，
+因此outRect中的top值等于重叠区域的高度。
+
+需要注意的是，这里状态栏对窗口位置的影响并不会实际生效，也就是窗口仍然会和状态栏重叠，因此状态栏对窗口位置的影响是一种理论上的，并非一定会生效。
+
+

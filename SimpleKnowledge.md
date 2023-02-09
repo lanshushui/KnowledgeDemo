@@ -4,7 +4,12 @@ onCreateDialog()中->
 dialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 onCreate()中->
-setStyle(DialogFragment.STYLE_NORMAL, android.R.style.Theme_Black_NoTitleBar); //android.R.style.Theme_Black_NoTitleBarFULLSCREEN_FULLSCREEN这个不知道需不需要
+setStyle(DialogFragment.STYLE_NORMAL, android.R.style.Theme_Black_NoTitleBar);
+//android.R.style.Theme_Black_NoTitleBarFULLSCREEN_FULLSCREEN这个不知道需不需要
+
+✰✰✰✰✰
+setLayout并不会影响window的大小,他影响的是decorView   window.setAttributes(layoutParams)才会影响
+
 
 ✰✰✰✰✰
 多次对SpannableString 调用 setSpan时，将 span用CharacterStyle.wrap包裹起来  不能对同一个span使用多次setSpan,之前的setSpan会失效
