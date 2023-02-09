@@ -60,3 +60,19 @@ suspend fun getUserCoroutine() = suspendCancellableCoroutine<User> { continuatio
         }
     })
 }
+
+//将 RecyclerView 滚动到底部的解决方法
+fun scrollToBottom() {
+    val adapter = adapter ?: return
+    // scroll to last item to get the view of last item
+    val layoutManager = layoutManager as LinearLayoutManager?
+    val lastItemPosition = adapter.itemCount - 1
+    layoutManager?.scrollToPositionWithOffset(lastItemPosition, 0)
+    post { // then scroll to specific offset
+        val target: View? = layoutManager?.findViewByPosition(lastItemPosition)
+        if (target != null) {
+            val offset: Int = measuredHeight - target.measuredHeight
+            layoutManager.scrollToPositionWithOffset(lastItemPosition, offset)
+        }
+    }
+}
