@@ -8,7 +8,7 @@ setStyle(DialogFragment.STYLE_NORMAL, android.R.style.Theme_Black_NoTitleBar);
 //android.R.style.Theme_Black_NoTitleBarFULLSCREEN_FULLSCREEN这个不知道需不需要
 
 ✰✰✰✰✰
-setLayout并不会影响window的大小,他影响的是decorView   window.setAttributes(layoutParams)才会影响
+setLayout会影响window的大小
 
 
 ✰✰✰✰✰

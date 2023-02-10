@@ -51,3 +51,7 @@ WindowInsetsAnimationCompat.Callback
         lastBottomMargin = typesInset.bottom
         //设置占位View的marginBottom
 
+
+getWindowVisibleDisplayFrame 返回的是该window的内容可视区域数据 ，并不是window的区域数据
+getWindowVisibleDisplayFrame方法内 获得window的大小后 ，会减去 mAttachInfo.mVisibleInsets的数据,即软键盘等数据 
+
