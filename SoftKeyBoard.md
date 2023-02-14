@@ -55,3 +55,7 @@ WindowInsetsAnimationCompat.Callback
 getWindowVisibleDisplayFrame 返回的是该window的内容可视区域数据 ，并不是window的区域数据
 getWindowVisibleDisplayFrame方法内 获得window的大小后 ，会减去 mAttachInfo.mVisibleInsets的数据,即软键盘等数据 
 
+
+view.setWindowInsetsAnimationCallback  安卓9以上才有的API
+ViewCompat.setOnApplyWindowInsetsListener 低版本兼容 ，但鸡肋 ，也没啥兼用
+
