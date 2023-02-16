@@ -16,5 +16,7 @@ val width = 100 - 10 -
 2.try catch 不能捕捉异步线程引发的崩溃
                                                          
 
-   
+3.kotlin设置变量只能读取不能修改
+    var text: CharSequence? = null
+        private set
    
