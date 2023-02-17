@@ -19,4 +19,8 @@ val width = 100 - 10 -
 3.kotlin设置变量只能读取不能修改
     var text: CharSequence? = null
         private set
-   
+
+4.kotlin 定义接口使用使用fun关键词 调用处可以使用函数方式，就可以不用 :object 方式
+fun interface SuccessCallback {
+    fun onSuccess()
+}
