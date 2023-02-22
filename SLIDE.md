@@ -23,3 +23,16 @@ parent.requestDisallowInterceptTouchEvent(true) 会一直向上透传  每次调
 
 通过自定义PagerSnapHelper子类  findTargetSnapPosition方法（快速滑动回调）和findSnapView方法（慢速滑动回调）来实现对上下滑的拦截
 
+
+
+MotionEvent
+getX()和getY()：由这两个函数获得的x,y值是相对的坐标值，相对于消费这个事件的视图的左上点的坐标。
+
+其中ViewGroup的dispatchTransformedTouchEvent函数有如下一段代码:
+    final float offsetX = mScrollX - child.mLeft;
+    final float offsetY = mScrollY - child.mTop;
+    event.offsetLocation(offsetX, offsetY); //该行可以看出相关坐标是如何改变的
+    handled = child.dispatchTouchEvent(event);
+    event.offsetLocation(-offsetX, -offsetY);
+
+
