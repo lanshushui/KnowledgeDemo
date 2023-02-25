@@ -77,10 +77,6 @@ System.arraycopy(oldArray2,0,newArray,oldArray1,length,oldArray2,length)
 两个TAG过滤日志  ->   (TAG1)+|(TAG2)+
 正则匹配  $05  ->  \\$\\d{2}
 
-✰✰✰✰✰   LinearLayout的特殊之处
- 父布局宽为wrap_content时，其中一个子view不想影响父布局的宽度，最宽为父布局的长度时，采用LinearLayout，该子view宽用match_parent
- 即父布局宽为wrap_content 子view宽用match_parent
- 
  
 ✰✰✰✰✰ Java和Kotlin交互注意到：
 kotlin的Long::class.java 对应的Java的long.class ，而不是Long.class。
