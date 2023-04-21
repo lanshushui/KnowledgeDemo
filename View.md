@@ -10,3 +10,6 @@ android:includeFontPadding="false"
 
 ✰✰✰✰✰  Fragment和父view
 当父view 被removeFromParent ，不会影响Fragment的生命周期
+
+✰✰✰✰✰
+scaleX,scaleY 改变的是内容的宽高，但它在布局中所占的空间不会改变。getWidth不会发生变化。只是画面发生了变化。
